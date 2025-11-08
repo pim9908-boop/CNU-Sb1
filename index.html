@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 에너지 솔루션 컨설턴트 - 대전</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Top Menu */
+        .top-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .menu-item:hover {
+            background: #4CAF50;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(25, 118, 210, 0.95), rgba(76, 175, 80, 0.9)),
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%231976D2"/><circle cx="20" cy="20" r="3" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="3" fill="white" opacity="0.1"/><circle cx="50" cy="50" r="2" fill="white" opacity="0.15"/></svg>');
+            color: white;
+            padding: 150px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(76, 175, 80, 0.2) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(76, 175, 80, 0.5);
+            background: #45a049;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 5px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #e74c3c;
+        }
+
+        .problem-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .solution-hero {
+            background: linear-gradient(135deg, #4CAF50, #1976D2);
+            color: white;
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.3);
+        }
+
+        .solution-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .solution-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: #4CAF50;
+            transform: scale(1.05);
+            background: white;
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+        }
+
+        .feature-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4CAF50, #1976D2);
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .feature-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, #f8f9fa, white);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            gap: 30px;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .benefit-icon {
+            font-size: 4rem;
+            min-width: 80px;
+        }
+
+        .benefit-content h3 {
+            font-size: 1.8rem;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .benefit-content p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 100px 20px;
+            background: #1976D2;
+            color: white;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .trust-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .trust-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .trust-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        .trust-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .trust-card li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .trust-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .pricing-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #f8f9fa, white);
+            border: 3px solid #4CAF50;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.2);
+        }
+
+        .price-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+        }
+
+        .price-item {
+            text-align: center;
+        }
+
+        .price-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .price-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .price-value.old {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .price-value.new {
+            color: #4CAF50;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            padding: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .bonus-box {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .bonus-box h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .bonus-box p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #4CAF50, #1976D2);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .urgency-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 30px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto 0;
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
+        }
+
+        .privacy-notice {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-container {
+                font-size: 0.85rem;
+            }
+
+            .menu-item {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 130px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .price-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Menu -->
+    <nav class="top-menu">
+        <div class="menu-container">
+            <a href="#hero" class="menu-item">헤드라인</a>
+            <a href="#problem" class="menu-item">문제</a>
+            <a href="#solution" class="menu-item">솔루션</a>
+            <a href="#benefits" class="menu-item">혜택</a>
+            <a href="#trust" class="menu-item">신뢰</a>
+            <a href="#pricing" class="menu-item">가격</a>
+            <a href="#apply" class="menu-item">신청</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">💡 대전 지역 특화 에너지 솔루션</div>
+            <h1>대전의 숨겨진 과학 자원으로,<br>매달 나가는 에너지 비용을<br>혁신적으로 줄이세요!</h1>
+            <p class="hero-subtitle">에너지공학 전문가의 친절한 1:1 진단<br>로컬 에너지 솔루션 컨설턴트</p>
+            <a href="#apply" class="cta-primary">무료 에너지 진단 신청하기</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <h2 class="section-title">⚡️ 혹시 당신도 이런 고민을 하고 계신가요?</h2>
+            <p class="section-subtitle">많은 분들이 에너지 효율 개선의 필요성을 느끼지만,<br>전문적인 지식의 부재와 복잡함 때문에 행동으로 옮기지 못하고 손해를 보고 있습니다.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>높은 고지서, 원인은 모르겠고...</h3>
+                    <p>매달 나오는 전기/냉난방 고지서를 볼 때마다 부담을 느끼지만, 왜 이렇게 많이 나오는지 정확한 이유를 모르겠습니다.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🤔</div>
+                    <h3>태양광은 관심 있는데 복잡해서...</h3>
+                    <p>태양광 패널 설치를 고려했지만, 복잡한 정부 지원금이나 기술적인 내용 때문에 망설이고 있습니다.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">😓</div>
+                    <h3>절약 시도해도 효과가 미미해요</h3>
+                    <p>에너지 절약을 시도해도 눈에 띄는 효과가 미미하고, 우리 건물에 최적화된 솔루션이 무엇인지 알 수 없습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solution-section">
+        <div class="container">
+            <div class="solution-hero">
+                <h2>🚀 대전 지역 특화 에너지 효율 혁신,<br>로컬 컨설팅으로 시작하세요</h2>
+                <p>'로컬 에너지 솔루션 컨설턴트'는 에너지공학과 출신의 전문 지식과 친절한 소통 능력을 결합하여, 복잡한 에너지 문제를 가장 쉽고 명확하게 해결해 드립니다.</p>
+                <p style="margin-top: 20px; font-weight: bold;">우리의 핵심 가치는 <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 10px;">'지역 맞춤형 데이터 기반 솔루션'</span>입니다.</p>
+            </div>
+
+            <div class="solution-features">
+                <div class="feature-card">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🔬</div>
+                    <h3>과학 도시 대전의 인프라 활용</h3>
+                    <p>Exciton 이동 원리부터 최신 ESS(에너지 저장 시스템)까지, 과학 중심지 대전의 기술을 활용합니다.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">📈</div>
+                    <h3>데이터 기반 맞춤형 분석</h3>
+                    <p>귀하의 에너지 소비 패턴을 정밀 분석하여 가장 효율적인 솔루션을 제시합니다.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">💬</div>
+                    <h3>친절한 1:1 컨설팅</h3>
+                    <p>복잡한 기술 용어를 쉽게 풀어 설명하고, 귀하의 상황에 맞는 최적의 해결책을 찾아드립니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">💰 컨설팅 후, 당신이 얻게 될 3가지 명확한 혜택</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">💵</div>
+                <div class="benefit-content">
+                    <h3>1. 연 10% 이상 에너지 비용 절감 로드맵</h3>
+                    <p>비효율적인 에너지 소비 패턴을 찾아내고, 단기/장기 절약 목표를 설정할 수 있는 구체적인 실행 계획을 제공합니다. 평균적으로 연간 수백만 원의 비용 절감 효과를 경험하실 수 있습니다.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">📚</div>
+                <div class="benefit-content">
+                    <h3>2. 복잡한 기술/지원금 1:1 친절 해설</h3>
+                    <p>에너지공학 전문 지식을 바탕으로 태양광/ESS 등 복잡한 기술 원리와 정부/지자체 지원금 신청 과정을 가장 친절하고 쉽게 설명해 드립니다. 어려운 서류 작업도 함께 도와드립니다.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">🤝</div>
+                <div class="benefit-content">
+                    <h3>3. 신뢰할 수 있는 지역 시공사 연계</h3>
+                    <p>대전 지역에서 검증된 우수 시공업체와의 네트워크를 활용하여, 컨설팅부터 시공, 사후 관리까지 논스톱(Non-Stop)으로 지원받을 수 있습니다. 중간 마진 없이 합리적인 가격으로 진행됩니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section id="trust" class="trust-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">✅ 신뢰할 수 있는 컨설팅</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">검증된 전문성과 지역 네트워크로 확실한 결과를 보장합니다</p>
+            
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <h3>🎯 MVP 실증 계획</h3>
+                    <ul>
+                        <li>지역 소상공인 밀집 상가 5곳 대상 시범 운영</li>
+                        <li>에너지 소비 패턴 정밀 진단 + 30분 무료 컨설팅</li>
+                        <li>에너지 소비가 높은 노후 상가를 우선 지원</li>
+                    </ul>
+                </div>
+                
+                <div class="trust-card">
+                    <h3>🏢 협력 기관 네트워크</h3>
+                    <ul>
+                        <li>대전테크노파크(TP) 에너지 관련 센터</li>
+                        <li>최신 기술 정보 및 지역 에너지 정책 연계</li>
+                        <li>지역 소형 태양광/ESS 설치 전문 업체 제휴</li>
+                    </ul>
+                </div>
+                
+                <div class="trust-card">
+                    <h3>💪 컨설턴트의 강점</h3>
+                    <ul>
+                        <li>에너지공학과 전공 출신의 전문 지식</li>
+                        <li>높은 창의성과 문제 해결 능력</li>
+                        <li>친절한 커뮤니케이션으로 기술과 고객 니즈 완벽 연결</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="pricing-container">
+                <div style="text-align: center;">
+                    <span class="pricing-badge">🚀 선착순 20팀 한정 특별 혜택!</span>
+                    <h2 class="section-title">🎁 지금 신청하시면,<br>에너지 진단의 문턱이 사라집니다</h2>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: #1976D2;">초기 MVP 베타 테스터 특별 모집</h3>
+                    
+                    <div class="price-comparison">
+                        <div class="price-item">
+                            <div class="price-label">정가</div>
+                            <div class="price-value old">250,000원</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-label">베타 테스터 특가</div>
+                            <div class="price-value new">75,000원</div>
+                        </div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li><strong>에너지 소비 패턴 정밀 진단</strong> (정가 100,000원 → 무료)</li>
+                        <li><strong>1:1 맞춤형 솔루션 보고서</strong> (정가 150,000원 → 75,000원)</li>
+                        <li><strong>지원금 신청 가이드</strong> 제공</li>
+                        <li><strong>지역 시공사 연계</strong> 서비스</li>
+                        <li><strong>사후 관리</strong> 컨설팅 (3개월)</li>
+                    </ul>
+
+                    <div class="bonus-box">
+                        <h4>🎉 특별 보너스 혜택</h4>
+                        <p>컨설팅 후 실제 시공까지 연계할 경우,<br><strong>컨설팅 비용 75,000원을 시공 비용에서 전액 할인!</strong><br>(사실상 진단 및 솔루션 제안 완전 무료)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="apply" class="cta-section">
+        <div class="cta-content">
+            <h2>망설이지 마세요!<br>절약은 곧 수익입니다.</h2>
+            <p>대전의 과학 인프라를 활용한 가장 스마트한 에너지 효율 개선을 지금 바로 시작하세요.<br>친절한 컨설턴트가 당신의 고민에 귀 기울이고, 최적의 솔루션을 제시해 드립니다.</p>
+            
+            <div class="urgency-text">⚠️ 선착순 20팀 마감 임박! ⚠️</div>
+
+            <div class="form-container">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.8rem;">[베타 테스터 한정]<br>에너지 효율 무료 진단 신청</h3>
+                
+                <form id="applicationForm">
+                    <div class="form-group">
+                        <label for="name">이름 *</label>
+                        <input type="text" id="name" name="name" required placeholder="홍길동">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">연락처 *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="010-1234-5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessType">사업장 유형 *</label>
+                        <select id="businessType" name="businessType" required>
+                            <option value="">선택해주세요</option>
+                            <option value="retail">소상공인/상가</option>
+                            <option value="restaurant">식당/카페</option>
+                            <option value="factory">소형 공장/제조</option>
+                            <option value="office">사무실/오피스</option>
+                            <option value="residential">주택/아파트</option>
+                            <option value="other">기타</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">사업장 위치 (대전 내) *</label>
+                        <input type="text" id="location" name="location" required placeholder="예: 유성구 궁동">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthlyCost">월평균 에너지 비용</label>
+                        <input type="text" id="monthlyCost" name="monthlyCost" placeholder="예: 50만원">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="concerns">주요 고민사항</label>
+                        <textarea id="concerns" name="concerns" rows="4" placeholder="예: 여름철 냉방비가 너무 많이 나와서 고민입니다. 태양광 설치를 고려 중이지만 지원금이나 효과에 대해 잘 모르겠습니다."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">무료 진단 신청하기 →</button>
+
+                    <p class="privacy-notice">* 제출하신 정보는 컨설팅 목적으로만 사용되며, 안전하게 관리됩니다.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>로컬 에너지 솔루션 컨설턴트</strong></p>
+            <p style="margin-top: 10px;">대전 지역 특화 에너지 효율 혁신 파트너</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">문의: contact@localenergy-daejeon.com</p>
+            <p style="margin-top: 30px; opacity: 0.6; font-size: 0.85rem;">© 2025 로컬 에너지 솔루션 컨설턴트. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for menu items
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                businessType: document.getElementById('businessType').value,
+                location: document.getElementById('location').value,
+                monthlyCost: document.getElementById('monthlyCost').value,
+                concerns: document.getElementById('concerns').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Show success message
+            alert('신청이 완료되었습니다! 🎉\n\n빠른 시일 내에 담당 컨설턴트가 연락드리겠습니다.\n감사합니다.');
+            
+            // Log to console (실제로는 서버로 전송)
+            console.log('Form submitted:', formData);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Menu highlight on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            menuItems.forEach(item => {
+                item.style.background = '';
+                item.style.color = '';
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.style.background = '#4CAF50';
+                    item.style.color = 'white';
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .problem-card, .benefit-item, .trust-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
